@@ -1,0 +1,288 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#text-container {
+  font-size: 20px;
+  /* Tamanho da fonte aumentado */
+  font-weight: bold;
+  /* Texto em negrito */
+  height: 30px;
+  color: white;
+  text-align: center;
+  margin-top: 90px;
+  /* Margem aumentada para mover o texto mais para baixo */
+}
+
+.text-message {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  border-right: 2px solid white;
+  animation: typing 1.5s steps(40, end) forwards, erasing 1.5s steps(40, end) 27s forwards;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes erasing {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0;
+  }
+}
+
+#stats {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  /* Organiza os filhos em uma coluna */
+  align-items: center;
+  /* Centraliza horizontalmente */
+}
+
+#stats div {
+  margin: 5px;
+  /* Adiciona uma pequena margem entre as linhas */
+}
+
+
+#color-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid grey;
+  cursor: pointer;
+  box-shadow: 0px 5px 10px #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s ease;
+}
+
+#color-button div {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: purple;
+  /* Cor inicial */
+}
+
+#button-container {
+  width: 154px;
+  height: 154px;
+  border-radius: 50%;
+  border: 2px solid grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: -10px;
+  background-color: purple;
+  /* Cor inicial */
+  color: rgba(51, 51, 51, 0.5);
+  /* Cor inicial */
+  box-shadow: 0px 15px 25px #333;
+  /* Sombra inicial */
+  transition: all 0.1s ease;
+}
+
+#circle:active {
+  top: 0;
+  box-shadow: none;
+}
+
+#circle.inactive:active {
+  top: -10px;
+  box-shadow: 0px 15px 25px #333;
+}
+
+
+#color-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+#color-popup.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+#color-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.color-option {
+  width: 75px;
+  /* Tamanho reduzido */
+  height: 75px;
+  /* Tamanho reduzido */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  top: -5px;
+  border: 2px solid grey;
+  background-color: #333;
+  /* Bordas cinza */
+  box-shadow: 0px 10px 20px #333;
+  /* Sombra reduzida */
+  transition: all 0.1s ease;
+  margin: 5px;
+
+}
+
+
+.color-option div {
+  width: 71px;
+  /* Tamanho reduzido */
+  height: 71px;
+  /* Tamanho reduzido */
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  z-index: 1;
+
+}
+
+.color-option:active div {
+  top: 0;
+  box-shadow: none;
+}
+
+
+.color-option span {
+  position: absolute;
+  font-size: 24px;
+  /* Tamanho da fonte */
+  font-weight: bold;
+  /* Negrito */
+  color: #333;
+  /* Cor do texto */
+  z-index: 1;
+  /* Posicionamento acima da camada colorida */
+  top: 50%;
+  /* Centralização vertical */
+  left: 50%;
+  /* Centralização horizontal */
+  transform: translate(-50%, -50%);
+  /* Ajuste fino da posição */
+}
+
+
+#settings-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#config-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+#config-popup.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+#config-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#change-color-button,
+#reset-scores-button {
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid grey;
+  text-align: center;
+  margin: 5px;
+  color: black;
+  transition: background-color 0.3s;
+}
+
+#change-color-button:hover,
+#reset-scores-button:hover {
+  background-color: #f0f0f0;
+}

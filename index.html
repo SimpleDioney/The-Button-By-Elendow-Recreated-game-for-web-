@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clicker Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <audio id="click-sound" src="click.mp3"></audio>
+  <div id="stats">
+    <div>Max: <span id="max-score">0</span></div>
+    <div>Total: <span id="total-score">0</span></div>
+    <div>Restarts: <span id="restarts">0</span></div>
+  </div>
+
+  <div id="button-container">
+    <div id="circle" onclick="clickCircle()">0</div>
+  </div>
+  <div id="config-popup" onclick="toggleConfigPopup()">
+    <div id="config-card" onclick="event.stopPropagation()">
+      <div id="change-color-button" onclick="toggleColorPopup()">Mudar Cor do Botão</div>
+      <div id="reset-scores-button" onclick="resetScores()">Resetar Pontuações</div>
+    </div>
+  </div>
+
+  <div id="settings-button" onclick="toggleConfigPopup()">
+    <img src="settings-icon.png" alt="Configurações" /> <!-- Ícone de configurações -->
+  </div>
+  <div id="color-popup" onclick="toggleColorPopup()">
+    <div id="color-card" onclick="event.stopPropagation()">
+      <!-- As opções de cores serão adicionadas aqui pelo JavaScript -->
+    </div>
+  </div>
+  <div id="text-container"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
