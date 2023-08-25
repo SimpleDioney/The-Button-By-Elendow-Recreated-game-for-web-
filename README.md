@@ -1,5 +1,5 @@
 # The-Button-By-Elendow-Recreated-game-for-web-
-[En] A copy of the steam game The Button by Elendow, but made for web!
+[En] A copy of the steam game The Button by Elendow, but made for web!     
 [Pt ]Uma cópia do jogo da steam The Button by Elendow, mas criado para web!
 
 [En] You can try it here: https://the-button.devioney.repl.co/               
