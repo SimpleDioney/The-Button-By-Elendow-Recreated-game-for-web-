@@ -16,16 +16,14 @@ body {
   user-select: none;
 }
 
+
 #text-container {
   font-size: 20px;
-  /* Tamanho da fonte aumentado */
   font-weight: bold;
-  /* Texto em negrito */
   height: 30px;
   color: white;
   text-align: center;
   margin-top: 90px;
-  /* Margem aumentada para mover o texto mais para baixo */
 }
 
 .text-message {
@@ -65,16 +63,12 @@ body {
   font-size: 18px;
   display: flex;
   flex-direction: column;
-  /* Organiza os filhos em uma coluna */
   align-items: center;
-  /* Centraliza horizontalmente */
 }
 
 #stats div {
   margin: 5px;
-  /* Adiciona uma pequena margem entre as linhas */
 }
-
 
 #color-button {
   position: absolute;
@@ -118,17 +112,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
+  font-size: 100px;
   font-weight: bold;
   cursor: pointer;
   position: absolute;
   top: -10px;
   background-color: purple;
-  /* Cor inicial */
   color: rgba(51, 51, 51, 0.5);
-  /* Cor inicial */
   box-shadow: 0px 15px 25px #333;
-  /* Sombra inicial */
   transition: all 0.1s ease;
 }
 
@@ -243,7 +234,8 @@ body {
   justify-content: center;
 }
 
-#config-popup {
+#config-popup,
+#color-popup {
   position: fixed;
   top: 0;
   left: 0;
@@ -258,12 +250,14 @@ body {
   transition: all 0.3s ease;
 }
 
-#config-popup.show {
+#config-popup.show,
+#color-popup.show {
   visibility: visible;
   opacity: 1;
 }
 
-#config-card {
+#config-card,
+#color-card {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
@@ -271,8 +265,10 @@ body {
   flex-direction: column;
 }
 
+#show-achievements-button,
 #change-color-button,
-#reset-scores-button {
+#reset-scores-button,
+#remove-achievements-button {
   padding: 10px;
   cursor: pointer;
   border: 1px solid grey;
@@ -282,7 +278,118 @@ body {
   transition: background-color 0.3s;
 }
 
+#show-achievements-button:hover,
 #change-color-button:hover,
-#reset-scores-button:hover {
+#reset-scores-button:hover,
+#remove-achievements-button:hover {
   background-color: #f0f0f0;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.unlocked {
+  background-color: #d4edda;
+}
+
+.unlocked-icon,
+.locked-icon {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+
+#achievements-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+#achievements-popup.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+#achievements-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.achievement {
+  padding: 10px;
+  border: 1px solid grey;
+  margin: 5px;
+  color: black;
+}
+
+#achievement-unlocked-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #28a745;
+  /* Verde */
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  display: none;
+  /* Inicialmente oculto */
+  z-index: 1000;
+  /* Acima de outros elementos */
+}
+
+/* Estilos para o pop-up de detalhes da conquista */
+#achievement-details-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: black;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+}
+
+#achievement-details-card {
+  position: absolute;
+  top: 50%;
+  color: black;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button {
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.tab-content {
+  display: none;
 }
